@@ -1,0 +1,2 @@
+Users = {}
+lastUserId = 0
