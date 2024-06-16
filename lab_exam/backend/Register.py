@@ -20,6 +20,7 @@ class RegisterPage(QMainWindow):
         self.login_page.show()
         
     def register_user(self):
+        global lastUserId
         first_name = self.ui.firstname.text()
         last_name = self.ui.lastname.text()
         age = self.ui.age.text()
@@ -30,8 +31,8 @@ class RegisterPage(QMainWindow):
         if username in Users:
             QMessageBox.warning(self, "Registration Failed", "Username already exists")
         else:
-            user_id = lastUserId + 1
-            Users[user_id] = {
+            lastUserId += 1
+            Users[lastUserId] = {
                 'first_name': first_name,
                 'last_name': last_name,
                 'age': age,
